@@ -1,2 +1,2 @@
-a = 10
-print(a)
+text = 'hello world'
+print(text)
