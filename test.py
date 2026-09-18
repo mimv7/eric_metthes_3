@@ -1,2 +1,2 @@
-text = 'hello world'
-print(text)
+text = 'lorem'
+print(text.title())
