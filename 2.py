@@ -17,3 +17,22 @@ print(no_starch_url)
 name = 'roman'
 message = f'Hi, {name.title()}, do learn Python today?'
 print(message)
+
+# 2.4
+name = 'sveta'
+print(name.lower())
+print(name.upper())
+print(name.title())
+
+# 2.5
+print('Альберт Эйнштейн однажды сказал: "Тот, кто никогда не совершал ошибок, никогда не пробовал ничего нового".')
+
+# 2.6
+EINSTEIN_NAME = 'Альберт Эйнштейн'
+massage = 'Тот, кто никогда не совершал ошибок, никогда не пробовал ничего нового'
+print(f'{EINSTEIN_NAME} однажды сказал: "{massage}"')
+
+# 2.8
+file = 'python_notes.txt'
+file_name = file.removesuffix('.txt')
+print(file_name)
