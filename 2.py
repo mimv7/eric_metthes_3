@@ -1,3 +1,4 @@
+import this
 # 2.1
 
 print('hello, Python, world!')
@@ -36,3 +37,13 @@ print(f'{EINSTEIN_NAME} однажды сказал: "{massage}"')
 file = 'python_notes.txt'
 file_name = file.removesuffix('.txt')
 print(file_name)
+
+# 2.9
+print(5+3)
+print(10-2)
+print(4*2)
+print(int(32/4)) # !!! else 8.0
+
+# 2.10
+favorite_num = 7
+print(f'My favorite number - {favorite_num}')
