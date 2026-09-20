@@ -36,3 +36,19 @@ del guests[-1]
 del guests[-1]
 del guests[-1]
 print(guests)
+
+# 3.8
+countries = ['b','a','c','d','e']
+print(countries)
+temp_sorted = sorted(countries)
+print(temp_sorted)
+print(countries)
+countries.sort()
+print(countries)
+countries.sort(reverse=True)
+print(countries)
+countries.sort()
+print(countries)
+
+# 3.9
+print(len(guests))
