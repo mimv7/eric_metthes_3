@@ -1,6 +1,4 @@
-import this
 # 2.1
-
 print('hello, Python, world!')
 
 # 2.2
