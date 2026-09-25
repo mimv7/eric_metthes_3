@@ -42,3 +42,9 @@ for pizza in pizzas:
 print('friends favorite pizzas:')
 for pizza in friends_pizzas:
     print(f'\t{pizza}')
+
+# 4.13
+buffet_menu =('sup','juice','apple')
+print('Menu:')
+for dish in buffet_menu:
+    print(f'\t{dish}')
