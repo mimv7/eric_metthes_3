@@ -39,3 +39,58 @@ magazine_fruits = ['banana', 'kiwi','watermelon']
 for fruit in favorites_fruits:
     if fruit in magazine_fruits:
         print(f'I love {fruit}!')
+
+# 5.8
+users = ['sveta','roman','MAMA','admin','papa']
+for user in users:
+    if user.lower() == 'admin':
+        print(f'Hello, {user.title()}! Would you like to view the status report?')
+    else:
+        print(f'Hi, {user.title()}! Thanks for logging into the system.')
+
+# 5.9
+users = ['sveta','roman','MAMA','admin','papa']
+if users:
+    for user in users:
+        if user.lower() == 'admin':
+            print(f'Hello, {user.title()}! Would you like to view the status report?')
+        else:
+            print(f'Hi, {user.title()}! Thanks for logging into the system.')
+else:
+    print('No users')
+
+print('\n'*3)
+users = []
+if users:
+    for user in users:
+        if user.lower() == 'admin':
+            print(f'Hello, {user.title()}! Would you like to view the status report?')
+        else:
+            print(f'Hi, {user.title()}! Thanks for logging into the system.')
+else:
+    print(f'\tNo users')
+
+# 5.10
+current_users = ['sveta','roman','MAMA','admin','papa',]
+current_users_lover = [user_lover.lower() for user_lover in current_users]
+new_users = ['sveta','roman','MAMA','admin','Vladimir','joe','papa',]
+for user in new_users:
+    if user.lower() in current_users_lover:
+        print(f'Hello, {user.title()}, this name is already in use. Please choose a new username.')
+    else:
+        print(f'Hello, {user.title()}!')
+
+#5.11
+ordinal_numbers = []
+nums = list(range(1,10))
+for num in nums:
+    if num == 1:
+        ordinal_numbers.append(f'{num}st')
+    elif num == 2:
+        ordinal_numbers.append(f'{num}nd')
+    elif num == 3:
+        ordinal_numbers.append(f'{num}rd')
+    else:
+        ordinal_numbers.append(f'{num}th')
+for ordinal_number in ordinal_numbers:
+    print(ordinal_number)
