@@ -72,10 +72,10 @@ else:
 
 # 5.10
 current_users = ['sveta','roman','MAMA','admin','papa',]
-current_users_lover = [user_lover.lower() for user_lover in current_users]
+current_users_lower = [user_lower.lower() for user_lower in current_users]
 new_users = ['sveta','roman','MAMA','admin','Vladimir','joe','papa',]
 for user in new_users:
-    if user.lower() in current_users_lover:
+    if user.lower() in current_users_lower:
         print(f'Hello, {user.title()}, this name is already in use. Please choose a new username.')
     else:
         print(f'Hello, {user.title()}!')
