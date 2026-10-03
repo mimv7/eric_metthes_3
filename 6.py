@@ -5,8 +5,13 @@ im = {
     'age':41,
     'city':'Saint-Petersburg',
 }
-for key in im:
-    print(im[key])
+print(im['first_name'])
+print(im['last_name'])
+print(im['age'])
+print(im['city'])
+
+for value in im.values():
+    print(f'\t{value}')
 
 # 6.2
 favorite_numbers ={
