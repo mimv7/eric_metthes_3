@@ -32,3 +32,40 @@ glossary = {
 }
 for k,v in glossary.items():
     print(f'{k}:\n\t{v}')
+
+# 6.5
+rivers ={
+    'nile':'egypt',
+    'amazonka':'america',
+    'neva':'russia',
+}
+for k,v in rivers.items():
+    print(f'{k.title()} flows through the {v.title()}.')
+
+# 6.6
+favorite_languages = {
+    'roman':'python',
+    'jen':'python',
+    'sarah':'c',
+    'edward':'rust',
+    'phill':'python',
+}
+respondents = ['roman','sveta','jen','sarah','mama','papa','jenny','python']
+for respondent in respondents:
+    if respondent.lower() in favorite_languages:
+        print(f'Thank you, {respondent.title()}, for participating in the survey.')
+
+    else:
+        print(f'{respondent.title()}, tell me, what is your favorite programming language?')
+
+# 6.7
+numbers = []
+num = 5
+for i in range(10):
+    print(i)
+
+    numbers.append(num)
+    num += 5
+print(numbers[0:5])
+print(numbers)
+
