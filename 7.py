@@ -59,5 +59,19 @@ for ingredient in current_sandwich:
     print(f'I created a {ingredient} sandwich')
 
 # 7.10
-user = 'masha'
-vacation_destination = 'turkey'
+survey = True
+survey_result = {}
+print(survey_result)
+while survey:
+    question = input('Let\'s start the survey. If not, then click "n"')
+    if question.lower() == 'n':
+        survey = False
+        print('The survey is finished.')
+        break
+
+    user = input('What is your name: ')
+    vacation_destination = input('If you could visit one place in the world, where would you go? ')
+    survey_result[user] = vacation_destination
+print("--- Survey Results ---")
+for name,place in survey_result.items():
+    print(f'{name.title()} wanted to go to {place.title()}.')
