@@ -40,3 +40,24 @@ while True:
         print('error')
     if visitor_sage == 'q':
         break
+
+# 7.8
+current_sandwich = ['tuna', 'chicken', 'cheese', 'big mak', 'vegetarian', ]
+finished_sandwiches = []
+while current_sandwich:
+    item_sandwich = current_sandwich.pop(0)
+    finished_sandwiches.append(item_sandwich)
+for ingredient in finished_sandwiches:
+    print(f'I created a {ingredient} sandwich')
+
+# 7.9
+current_sandwich = ['breakfast','breakfast','tuna', 'chicken', 'cheese', 'big mak', 'vegetarian','breakfast' ]
+print('Breakfast is sold until 10:00 a.m.')
+while 'breakfast' in current_sandwich:
+    current_sandwich.remove('breakfast')
+for ingredient in current_sandwich:
+    print(f'I created a {ingredient} sandwich')
+
+# 7.10
+user = 'masha'
+vacation_destination = 'turkey'
