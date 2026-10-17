@@ -31,4 +31,3 @@ def describe_city(city,country='Russia'):
 describe_city('moscow')
 describe_city('Saint-Petersburg')
 describe_city('maima','usa')
-describe_city('kaluga')
