@@ -31,3 +31,62 @@ def describe_city(city,country='Russia'):
 describe_city('moscow')
 describe_city('Saint-Petersburg')
 describe_city('maima','usa')
+
+# 8.6
+def city_country(city,country):
+    the_countrys_capital =f'{city.title()}, {country.title()}!'
+    return  the_countrys_capital
+print(city_country('Moscow','Russia'))
+print(city_country('Washington','usa'))
+print(city_country('novograd','ordania'))
+
+# 8.7
+def make_album(performer,album_title,songs_album=''):
+    album = {'performer':performer,
+             'album_title':album_title,}
+    if songs_album:
+        album['sougs']=songs_album
+    return  album
+
+print(make_album('Король и Шут','Жаль, нет ружья'))
+print(make_album('Linkin Park','Hybrid Theor',12))
+print(make_album(' AC/DC','Highway to Hell'))
+
+# 8.8
+def make_album(performer, album_title, songs_album=''):
+    """Строит словарь с информацией о музыкальном альбоме."""
+    album = {
+        'performer': performer,
+        'album_title': album_title,
+    }
+    if songs_album:
+        album['songs'] = songs_album
+    return album
+
+
+# Запускаем бесконечный цикл, как требует задание
+while True:
+    print("\nВведите информацию об альбоме.")
+    print("(введите 'q' в любой момент для выхода)")
+
+    in_performer = input("Исполнитель: ")
+    if in_performer.lower() == 'q':
+        break
+
+    in_album_title = input("Название альбома: ")
+    if in_album_title.lower() == 'q':
+        break
+
+    in_songs = input("Количество треков (необязательно): ")
+    if in_songs.lower() == 'q':
+        break
+
+    # Обрабатываем количество треков, если они были введены
+    if in_songs:
+        in_songs = int(in_songs)
+    else:
+        in_songs = ''
+
+    # Создаем альбом и выводим его на экран внутри цикла
+    in_album = make_album(in_performer, in_album_title, in_songs)
+    print(f"\nСоздан словарь: {in_album}")
