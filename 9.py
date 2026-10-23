@@ -1,26 +1,32 @@
-# 8.9
-def show_message(messages):
-    for message in messages:
-        print(f'\n\t {message}')
+# 8.12
+def gathering_ingredients(spread,*ingridients, base = 'bread'):
+    # получение и вывод состава бутерброда
+    print(f'\nBase of a sandwich - {base}:')
+    print(f'\tA spread for a sandwich - {spread}')
+    for num, ingredient in enumerate(ingridients, start=1):
+        print(f'\t{num} ingredient - {ingredient}')
 
-# Простой список текстов сообщений
-message_for_the_Python_course = [
-        "Привет! 👋 Завтра покажем, как написать первый скрипт на Python за 10 минут. Будет только практика!",
-        "А вы знали, что Python-код в 3 раза короче Java? Собрали топ-3 сферы для старта новичка: [ссылка]",
-        "Ловите обещанный чек-лист: 'Пошаговый план перехода в IT с нуля' 🎁 [ссылка]",
-        "🔥 Места на интенсив по Python заканчиваются. Старт в понедельник. Успейте записаться: [ссылка]"
-]
-show_message(message_for_the_Python_course)
+gathering_ingredients('butter')
+gathering_ingredients('rama','lard', 'offal', 'pig ears')
 
-# 8.10
-def send_message(massages,sent_messages):
-    while massages:
-        phrase = massages.pop()
-        sent_messages.append(phrase)
-    print(sent_messages)
-    print(massages)
+# 8.13
+def build_profile(first, last, **user_info):
+    """Строит словарь с информацией о пользователе."""
+    user_info['first_name'] = first
+    user_info['last_name'] = last
+    return user_info
 
-sent_messages =[]
+user_profile = build_profile('roman', 'meleshin',
+                             location='Saint-Petersburg',
+                             field='QA engineer')
+print(user_profile)
 
-send_message(message_for_the_Python_course[:],sent_messages)
+# 8.14
+def show_car_info(manufacturer,model,color='blue',tow_package =True, **car_info):
+    # показать информацию о машине
+    car_info['manufacturer']=manufacturer
+    car_info['model']=model
+    print(car_info)
 
+
+show_car_info('bmw','m5',class_car='sport')
