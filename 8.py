@@ -6,12 +6,14 @@ display_message()
 # 8.2
 name_book = 'Eric Matthes: Learning Python'
 def favorite_book(title):
+    """выводит текст с названием книги """
     print(f'One of my favorite books is "{title}"')
 
 favorite_book(name_book)
 
 # 8.2
 def make_shirt(size,inscription):
+    """выводит текст с размером и надписью на рубашке """
     print(f'Your T-shirt size is {size}, and it says "{inscription}" on it.')
 
 make_shirt(56,'Python')
@@ -148,8 +150,7 @@ def show_car_info(manufacturer,model,color='blue',tow_package =True, safety = 'a
     car_info['model']=model
     car_info['color'] =color
     car_info['tow_package'] = tow_package
-    car_info['safety']=safety
     print(car_info)
 
 show_car_info('bmw','m5',class_car='sport')
-show_car_info('niva','LADA Niva Sport',color='blue',tow_package =True, fuel='gasprom',class_car='as long as it makes it there',safety='icon on the steering wheel')
+show_car_info('niva','LADA Niva Sport',color='red',fuel='gasprom',class_car='as long as it makes it there',safety='icon on the steering wheel')
