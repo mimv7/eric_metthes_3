@@ -146,7 +146,9 @@ user_profile = build_profile('roman', 'meleshin',
 print(user_profile)
 
 # 8.14
-def show_car_info(manufacturer,model,color='blue',tow_package =True, safety = 'airbag',**car_info):
+def show_car_info(manufacturer,model,
+                  color='blue',tow_package=True,
+                  safety = 'airbag',**car_info):
     """показать информацию о машине"""
     car_info['manufacturer']=manufacturer
     car_info['model']=model
@@ -155,4 +157,5 @@ def show_car_info(manufacturer,model,color='blue',tow_package =True, safety = 'a
     print(car_info)
 
 show_car_info('bmw','m5',class_car='sport')
-show_car_info('niva','LADA Niva Sport',color='red',fuel='gasprom',class_car='as long as it makes it there',safety='icon on the steering wheel')
+show_car_info('niva','LADA Niva Sport',color='red', fuel='gasprom',class_car='as long as it makes it there',
+              safety='icon on the steering wheel')
