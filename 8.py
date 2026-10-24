@@ -28,6 +28,7 @@ make_shirt_2(46,'i love jS')
 
 # 8.4
 def describe_city(city,country='Russia'):
+    """выводит текст с названием города и страны """
     print(f'{city.title()} is in {country.title()}.')
 
 describe_city('moscow')
@@ -105,6 +106,7 @@ sent_messages =[]
 
 
 def show_message(messages):
+    """выводит текст из списка предложений """
     for message in messages:
         print(f'\n\t {message}')
 
@@ -145,7 +147,7 @@ print(user_profile)
 
 # 8.14
 def show_car_info(manufacturer,model,color='blue',tow_package =True, safety = 'airbag',**car_info):
-    # показать информацию о машине
+    """показать информацию о машине"""
     car_info['manufacturer']=manufacturer
     car_info['model']=model
     car_info['color'] =color
