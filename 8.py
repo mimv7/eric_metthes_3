@@ -159,3 +159,24 @@ def show_car_info(manufacturer,model,
 show_car_info('bmw','m5',class_car='sport')
 show_car_info('niva','LADA Niva Sport',color='red', fuel='gasprom',class_car='as long as it makes it there',
               safety='icon on the steering wheel')
+
+# 8.15
+import printing_functions
+
+letters_for_printing= ['a','b','c','d','e']
+printed_letters = []
+
+printing_functions.print_models(letters_for_printing,printed_letters)
+printing_functions.show_completed_models(printed_letters)
+
+# 8.16
+from printing_functions import make_shirt
+
+ozon_purchase = make_shirt(56, 'gold\'s gym')
+print(ozon_purchase)
+
+import printing_functions
+import printing_functions as pf
+pf.make_shirt('l','stay hungry')
+from  printing_functions import *
+make_shirt(54,'happy new year')
