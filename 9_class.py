@@ -41,9 +41,15 @@ class User:
         self.last_name = last_name
         self.registered_user = registered_user
     def describe_user(self):
-        return  f'Name:{self.first_name.title()}\n Surname:{self.last_name.title()}'
+        return  f'Name:{self.first_name.title()}\nSurname:{self.last_name.title()}'
     def greet_user(self):
-        print(f'{self.describe_user()}\nWelcome to the system')
+        if self.registered_user == True:
+            print(f'{self.describe_user()}\n'
+                'Welcome to the system')
+        else:print(f'{self.describe_user()}\n'
+                'You are not registered in the system.')
 
 im = User('roman','meleshin')
 im.greet_user()
+hacker = User('user','user',registered_user=False)
+hacker.greet_user()
