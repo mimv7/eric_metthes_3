@@ -53,3 +53,17 @@ im = User('roman','meleshin')
 im.greet_user()
 hacker = User('user','user',registered_user=False)
 hacker.greet_user()
+
+# 9.4
+class Restaurant:
+    def __init__(self,restaurant_name,cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+    def describe_restaurant(self):
+        print(f'{self.cuisine_type.title()} is served at "{self.restaurant_name.title()}".')
+    def open_restaurant(self):
+        print('The restaurant is open now.')
+
+restaurant = Restaurant('vkusnie sushi','Japanese food')
+restaurant.describe_restaurant()
+restaurant.open_restaurant()
