@@ -85,8 +85,8 @@ class User:
         self.login_attempts=0
     def greeting_user(self):
         print(f'{self.firs_name} {self.last_name}')
-    def increment_login_attempts(self,new_login_attempt):
-        self.login_attempts += new_login_attempt
+    def increment_login_attempts(self):
+        self.login_attempts += 1
         return self.login_attempts
     def reset_login_attempts(self):
         self.login_attempts = 0
@@ -96,11 +96,11 @@ class User:
 
 im = User('roman','meleshin')
 im.greeting_user()
-im.increment_login_attempts(1)
-im.increment_login_attempts(1)
+im.increment_login_attempts()
+im.increment_login_attempts()
 im.reset_login_attempts()
 im.total_attempts()
-im.increment_login_attempts(1)
-im.increment_login_attempts(1)
+im.increment_login_attempts()
+im.increment_login_attempts()
 im.total_attempts()
 
