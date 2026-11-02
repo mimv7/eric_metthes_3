@@ -59,11 +59,48 @@ class Restaurant:
     def __init__(self,restaurant_name,cuisine_type):
         self.restaurant_name = restaurant_name
         self.cuisine_type = cuisine_type
+        self.number_served = 0      # обслужено столиков
     def describe_restaurant(self):
         print(f'{self.cuisine_type.title()} is served at "{self.restaurant_name.title()}".')
-    def open_restaurant(self):
-        print('The restaurant is open now.')
+    def set_number_served(self,serviced_tables):
+        self.number_served = serviced_tables       # заданное количество обслуженных столиков
+        return self.number_served
+    def increment_number_served(self,increased_number_tables):  # добавление обслуженных столиков
+        self.number_served += increased_number_tables
+        return self.number_served
+    def info_restaurant(self):
+        print(self.number_served)
 
-restaurant = Restaurant('vkusnie sushi','Japanese food')
+restaurant = Restaurant('vkusnie sushi','Japanese food') #
 restaurant.describe_restaurant()
-restaurant.open_restaurant()
+restaurant.set_number_served(2)
+restaurant.increment_number_served(2)
+restaurant.info_restaurant()
+
+# 9.5
+class User:
+    def __init__(self,firs_name,last_name,):
+        self.firs_name=firs_name
+        self.last_name=last_name
+        self.login_attempts=0
+    def greeting_user(self):
+        print(f'{self.firs_name} {self.last_name}')
+    def increment_login_attempts(self,new_login_attempt):
+        self.login_attempts += new_login_attempt
+        return self.login_attempts
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+        return  self.login_attempts
+    def total_attempts(self):
+        print(f'Total number of login attempts {self.login_attempts}')
+
+im = User('roman','meleshin')
+im.greeting_user()
+im.increment_login_attempts(1)
+im.increment_login_attempts(1)
+im.reset_login_attempts()
+im.total_attempts()
+im.increment_login_attempts(1)
+im.increment_login_attempts(1)
+im.total_attempts()
+
