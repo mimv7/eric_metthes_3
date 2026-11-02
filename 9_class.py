@@ -79,28 +79,73 @@ restaurant.info_restaurant()
 
 # 9.5
 class User:
-    def __init__(self,firs_name,last_name,):
-        self.firs_name=firs_name
+    def __init__(self,first_name,last_name):
+        self.first_name=first_name
         self.last_name=last_name
         self.login_attempts=0
-    def greeting_user(self):
-        print(f'{self.firs_name} {self.last_name}')
+    def describe_user(self):
+        full_name = f'Hello, {self.first_name.title()} {self.last_name.title()}!'
+        print(full_name)
     def increment_login_attempts(self):
-        self.login_attempts += 1
-        return self.login_attempts
+        self.login_attempts +=1
+        return  self.login_attempts
     def reset_login_attempts(self):
         self.login_attempts = 0
-        return  self.login_attempts
-    def total_attempts(self):
-        print(f'Total number of login attempts {self.login_attempts}')
+        return self.login_attempts
+    def info_login_attempts(self):
+        print(f'Total number of login attempts - {self.login_attempts}')
 
-im = User('roman','meleshin')
-im.greeting_user()
-im.increment_login_attempts()
-im.increment_login_attempts()
-im.reset_login_attempts()
-im.total_attempts()
-im.increment_login_attempts()
-im.increment_login_attempts()
-im.total_attempts()
+my_user = User('roman','meleshin')
+my_user.describe_user()
+my_user.increment_login_attempts()
+my_user.increment_login_attempts()
+my_user.info_login_attempts()
+my_user.reset_login_attempts()
+my_user.info_login_attempts()
 
+# пример наследования
+class Restaurant:
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+
+    def describe_restaurant(self):
+        print(f'"{self.restaurant_name.title()}" serves {self.cuisine_type}.')
+
+
+# В скобках указываем родителя, у которого воруем функционал
+class IceCreamStand(Restaurant):
+
+    def __init__(self, restaurant_name, cuisine_type='Ice Cream'):
+        # super() говорит: "Эй, родитель, запусти свой __init__ и запиши имя и кухню"
+        super().__init__(restaurant_name, cuisine_type)
+
+        # А это уже личная, уникальная фишка потомка:
+        self.flavors = ['Ванильное', 'Шоколадное', 'Клубничное']
+
+    # Уникальный метод потомка, которого НЕТ у обычного ресторана
+    def display_flavors(self):
+        print("У нас в наличии следующие вкусы:")
+        for flavor in self.flavors:
+            print(f"- {flavor}")
+
+# Создаем именно кафе-мороженое
+my_ice_shop = IceCreamStand("Пломбирная Радость")
+
+# 1. Потомок БЕЗ проблем вызывает метод родителя, хотя мы его внутри IceCreamStand не писали!
+my_ice_shop.describe_restaurant()
+# Выведет: "Пломбирная Радость" serves Ice Cream.
+
+# 2. Потомок вызывает свой собственный уникальный метод
+my_ice_shop.display_flavors()
+# Выведет список вкусов
+
+# 9.5
+class Parent:
+    def __init__(self,arg_1,arg_2):
+        self.arg_1=arg_1
+        self.arg_2=arg_2
+
+class Dother(Parent):
+    def __init__(self,arg_1,arg_2):
+        super().__init__()
