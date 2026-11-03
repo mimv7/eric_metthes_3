@@ -172,4 +172,34 @@ my_user.info_login_attempts()
 my_user.reset_login_attempts()
 my_user.info_login_attempts()
 
+# 9.6
+class Restaurant:
+    def __init__(self,restaurant_name,cuisine_type):
+        self.restaurant_name=restaurant_name
+        self.cuisine_type=cuisine_type
+        self.number_served=0
+    def describe_restaurant(self):
+        print(f'The restaurant serves "{self.restaurant_name}" and {self.cuisine_type.title()} cuisine.number of '
+              f'tables served - {self.number_served}')
+    def set_number_served(self,served_table):
+        self.number_served += served_table
+        print(f'number of people served - {self.number_served}')
+class IceCreamStand(Restaurant):
+    def __init__(self,restaurant_name,cuisine_type):
+        super().__init__(restaurant_name,cuisine_type)
+        self.flavors = ['Vanilla', 'Mint Chocolate Chip', 'Cookies and Cream', 'Salted Caramel']
+    def list_flavors(self):
+        print(f'We have varieties of ice cream:')
+        for flavor in self.flavors:
+            print(f'- {flavor}')
 
+
+
+kfc= Restaurant('kfc','american')
+kfc.describe_restaurant()
+kfc.set_number_served(5)
+kfc.set_number_served(5)
+
+ice_cream_truck = IceCreamStand('max','ice cream')
+ice_cream_truck.describe_restaurant()
+ice_cream_truck.list_flavors()
