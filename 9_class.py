@@ -203,3 +203,57 @@ kfc.set_number_served(5)
 ice_cream_truck = IceCreamStand('max','ice cream')
 ice_cream_truck.describe_restaurant()
 ice_cream_truck.list_flavors()
+
+# 9.7
+class User:
+    def __init__(self,first_name,last_name):
+        self.first_name=first_name
+        self.last_name=last_name
+    def greet_user(self):
+        print(f'Hello, {self.first_name.title()} {self.last_name.title()}')
+class Admin(User):
+    def __init__(self,first_name,last_name):
+        super().__init__(first_name,last_name)
+        self.privileges = ['post message','delete users','ban users']
+    def show_privileges(self):
+        print('Admin make:')
+        for possibilities in self.privileges:
+            print(f'- {possibilities}')
+
+im_simple_user=User('roman','meleshin')
+im_simple_user.greet_user()
+
+admin_user = Admin('admin','pass')
+admin_user.greet_user()
+admin_user.show_privileges()
+
+# 9.8
+class User:
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+
+    def greet_user(self):
+        print(f'Hello, {self.first_name.title()} {self.last_name.title()}')
+
+
+class Privileges:
+    def __init__(self):
+        self.privileges = ['post message', 'delete users', 'ban users']
+    def show_privileges(self):
+        print('Admin make:')
+        for possibilities in self.privileges:
+            print(f'- {possibilities}')
+
+class Admin(User):
+    def __init__(self, first_name, last_name,):
+        super().__init__(first_name, last_name)
+        self.possibilities = Privileges()
+
+im_simple_user = User('roman', 'meleshin')
+im_simple_user.greet_user()
+
+admin_user = Admin('admin', 'pass')
+admin_user.greet_user()
+admin_user.possibilities.show_privileges()
+
