@@ -1,3 +1,72 @@
+# =====================================================================
+# 1. ОПРЕДЕЛЕНИЕ КЛАССОВ (Чертежи для будущих объектов)
+# =====================================================================
+
+class Battery:
+    """КЛАСС: Описывает, как устроен аккумулятор."""
+
+    def __init__(self, battery_size=40):
+        """МЕТОД (Функция класса): Конструктор аккумулятора.
+
+        Параметры:
+          self — указывает на конкретный создаваемый аккумулятор.
+          battery_size — числовое значение (по умолчанию 40).
+        """
+        # АТРИБУТ (Переменная объекта): Хранит размер батареи
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        """МЕТОД (Функция класса): Выводит информацию на экран.
+
+        Использует self, чтобы прочитать атрибут конкретного объекта.
+        """
+        print(f"This car has a {self.battery_size}-kWh battery.")
+
+
+class ElectricCar:
+    """КЛАСС: Описывает, как устроен электромобиль."""
+
+    def __init__(self, make, model, year):
+        """МЕТОД (Функция класса): Конструктор электромобиля.
+
+        Принимает текстовые и числовые параметры для описания машины.
+        """
+        # СТАНДАРТНЫЕ АТРИБУТЫ (Переменные объекта): Текст и числа
+        self.make = make
+        self.model = model
+        self.year = year
+
+        # СЛОЖНЫЙ АТРИБУТ (Экземпляр другого класса как атрибут):
+        # Вызов Battery() создает реальный объект аккумулятора
+        # и сохраняет его в атрибут self.battery нашей машины.
+        self.battery = Battery()
+
+    def get_descriptive_name(self):
+        """МЕТОД (Функция класса): Собирает красивое название машины."""
+        return f"{self.year} {self.make} {self.model}".title()
+
+
+# =====================================================================
+# 2. РАБОТА С КОДОМ (Создание и использование реальных объектов)
+# =====================================================================
+
+# ПЕРЕМЕННАЯ И ЭКЗЕМПЛЯР (Объект):
+# my_leaf — это переменная.
+# ElectricCar('nissan', 'leaf', 2024) — это создание реального объекта (экземпляра) по чертежу класса.
+my_leaf = ElectricCar('nissan', 'leaf', 2024)
+
+# ВЫЗОВ МЕТОДА МАШИНЫ:
+# Обращаемся к объекту машины и просим его выполнить свою функцию.
+print(my_leaf.get_descriptive_name())
+
+# ЦЕПОЧКА ВЫЗОВА (Сквозная точка):
+# my_leaf — объект-машина.
+# .battery — объект-аккумулятор, который лежит внутри этой машины.
+# .describe_battery() — метод (функция), которая выполняется внутри аккумулятора.
+my_leaf.battery.describe_battery()
+
+
+
 # 9.1
 class Restaurant:
     def __init__(self,restaurant_name,cuisine_type):
@@ -103,49 +172,4 @@ my_user.info_login_attempts()
 my_user.reset_login_attempts()
 my_user.info_login_attempts()
 
-# пример наследования
-class Restaurant:
-    def __init__(self, restaurant_name, cuisine_type):
-        self.restaurant_name = restaurant_name
-        self.cuisine_type = cuisine_type
 
-    def describe_restaurant(self):
-        print(f'"{self.restaurant_name.title()}" serves {self.cuisine_type}.')
-
-
-# В скобках указываем родителя, у которого воруем функционал
-class IceCreamStand(Restaurant):
-
-    def __init__(self, restaurant_name, cuisine_type='Ice Cream'):
-        # super() говорит: "Эй, родитель, запусти свой __init__ и запиши имя и кухню"
-        super().__init__(restaurant_name, cuisine_type)
-
-        # А это уже личная, уникальная фишка потомка:
-        self.flavors = ['Ванильное', 'Шоколадное', 'Клубничное']
-
-    # Уникальный метод потомка, которого НЕТ у обычного ресторана
-    def display_flavors(self):
-        print("У нас в наличии следующие вкусы:")
-        for flavor in self.flavors:
-            print(f"- {flavor}")
-
-# Создаем именно кафе-мороженое
-my_ice_shop = IceCreamStand("Пломбирная Радость")
-
-# 1. Потомок БЕЗ проблем вызывает метод родителя, хотя мы его внутри IceCreamStand не писали!
-my_ice_shop.describe_restaurant()
-# Выведет: "Пломбирная Радость" serves Ice Cream.
-
-# 2. Потомок вызывает свой собственный уникальный метод
-my_ice_shop.display_flavors()
-# Выведет список вкусов
-
-# 9.5
-class Parent:
-    def __init__(self,arg_1,arg_2):
-        self.arg_1=arg_1
-        self.arg_2=arg_2
-
-class Dother(Parent):
-    def __init__(self,arg_1,arg_2):
-        super().__init__()
