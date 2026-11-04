@@ -275,7 +275,6 @@ class Battery:
         if self.battery_capacity == 40:
             self.battery_capacity = 65
 
-
 class ElectricCar(Car):
     def __init__(self, make,model,year):
         super().__init__(make,model,year)
@@ -285,7 +284,7 @@ class ElectricCar(Car):
 father_in_law_car=Car('niva','legend','2026')
 father_in_law_car.get_desc_car()
 
-my_car= ElectricCar('ferrari','luce','2026',)
+my_car= ElectricCar('ferrari','luce','2026')
 my_car.get_desc_car()
 my_car.battery.get_battery_capacity()
 my_car.battery.upgrade_battery()
