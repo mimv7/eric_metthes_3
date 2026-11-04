@@ -258,3 +258,35 @@ admin_user.greet_user()
 admin_user.possibilities.show_privileges()
 
 # 9.9
+class Car:
+    def __init__(self,make,model,year):
+        self.make=make
+        self.model=model
+        self.year=year
+    def get_desc_car(self):
+        print(f'"{self.make.title()} {self.model}" {self.year}')
+
+class Battery:
+    def __init__(self,battery_capacity = 40):
+        self.battery_capacity = battery_capacity
+    def get_battery_capacity(self):
+        print(self.battery_capacity)
+    def upgrade_battery(self):
+        if self.battery_capacity == 40:
+            self.battery_capacity = 65
+
+
+class ElectricCar(Car):
+    def __init__(self, make,model,year):
+        super().__init__(make,model,year)
+        self.battery = Battery()
+
+
+father_in_law_car=Car('niva','legend','2026')
+father_in_law_car.get_desc_car()
+
+my_car= ElectricCar('ferrari','luce','2026',)
+my_car.get_desc_car()
+my_car.battery.get_battery_capacity()
+my_car.battery.upgrade_battery()
+my_car.battery.get_battery_capacity()
