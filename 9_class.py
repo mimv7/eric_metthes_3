@@ -296,3 +296,38 @@ burger_king = Restaurant('burger king','american')
 burger_king.describe_restaurant()
 
 # 9.13
+from random import randint,choice
+class Die:
+    def __init__(self):
+        self.sides = 6
+    def roll_die(self):
+        self.points = randint(1,self.sides)
+        print(f'result: {self.points}')
+        return self.points
+
+die_classic=Die()
+print('die_classic:')
+total = [die_classic.roll_die() for i in range(1,11)]
+die_ten= Die()
+die_ten.sides=10
+print('die_ten:')
+die_ten.roll_die()
+
+die_twenty=Die()
+die_twenty.sides=20
+print('die_twenty:')
+die_twenty.roll_die()
+
+# 9.14
+lottery = [1,2,3,4,5,6,7,8,9,10,'a','b','c','d','e']
+combinations_win = [choice(lottery) for i in range(1,5)]
+print(*combinations_win)
+
+# 9.15
+count = 0
+combinations_player = [choice(lottery) for i in range(1,5)]
+while combinations_player != combinations_win:
+    count+=1
+    combinations_player = [choice(lottery) for i in range(1, 5)]
+print(f'Your ticket won on the {count} try')
+
