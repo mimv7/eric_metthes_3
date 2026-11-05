@@ -289,3 +289,8 @@ my_car.get_desc_car()
 my_car.battery.get_battery_capacity()
 my_car.battery.upgrade_battery()
 my_car.battery.get_battery_capacity()
+
+# 9.10
+from Restaurant import Restaurant
+burger_king = Restaurant('burger king','american')
+burger_king.describe_restaurant()

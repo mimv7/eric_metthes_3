@@ -4,7 +4,7 @@ class Restaurant:
         self.cuisine_type=cuisine_type
         self.number_served=0
     def describe_restaurant(self):
-        print(f'The restaurant serves "{self.restaurant_name}" and {self.cuisine_type.title()} cuisine.number of '
+        print(f'The restaurant serves "{self.restaurant_name}" and {self.cuisine_type.title()} cuisine. Number of '
               f'tables served - {self.number_served}')
     def set_number_served(self,served_table):
         self.number_served += served_table
