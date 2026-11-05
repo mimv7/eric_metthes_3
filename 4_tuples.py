@@ -48,3 +48,23 @@ buffet_menu =('sup','juice','apple')
 print('Menu:')
 for dish in buffet_menu:
     print(f'\t{dish}')
+
+#-------------------------------------------------------
+# 1. Создаем пустой список
+squares_classic = []
+
+# 2. Запускаем цикл на 5 шагов
+for value in range(1, 6):
+    # 3. Считаем квадрат числа
+    square = value ** 2
+    # 4. Вручную добавляем его в конец списка
+    squares_classic.append(square)
+
+print("Через обычный цикл:", squares_classic)
+# Выведет: [1, 4, 9, 16, 25]
+#----------generator--------------
+# Всё происходит внутри квадратных скобок за один раз
+squares_generator = [value ** 2 for value  in range(1, 6)]
+
+print("Через генератор списка:", squares_generator)
+# Выведет: [1, 4, 9, 16, 25]
