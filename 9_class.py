@@ -330,6 +330,7 @@ while combinations_player != combinations_win:
     count+=1
     combinations_player = [choice(lottery) for i in range(1, 5)]
 print(f'Your ticket won on the {count} try')
+print(combinations_player)
 
 # 9.16
 """
@@ -344,3 +345,13 @@ print(f'Your ticket won on the {count} try')
 4. Напишите цикл while, который будет случайным образом генерировать новый вариант кода (тоже из 4 цифр от 1 до 5) до тех пор, пока этот вариант не совпадет с секретным кодом.
 5. Не забудьте увеличивать счетчик на 1 при каждой неудачной попытке.
 6. Как только код будет угадан, цикл должен завершиться, а программа должна вывести красивое сообщение: «Замок открыт! Понадобилось ... попыток»."""
+from random import choice
+
+lock_buttons = [1, 2, 3, 4, 5]
+my_code = [4,5,5,2]
+counter = 0
+random_combinations = [choice(lock_buttons) for i in range(1,5)]
+while my_code != random_combinations:
+    counter+=1
+    random_combinations = [choice(lock_buttons) for i in range(1, 5)]
+print(f'attempts to break the lock - {counter}')
