@@ -1,0 +1,3 @@
+In Python, you can create programs of any complexity.
+In Python, you can automate routine work with text.
+In Python, you can easily read and write files to a disk.
