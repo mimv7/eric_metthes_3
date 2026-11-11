@@ -22,11 +22,17 @@ for line in message.splitlines():
 # write_name = file.write_text(name.title())
 
 # 10.5
-path = Path('file_txt/name.txt')
-list_name = ''
-while True:
-    name = input('name:')
-    names = path.write_text(name)
-    list_name+=names
-    if name=='q':
-        break
+# path = Path('file_txt/name.txt')
+# list_name = ''
+# while True:
+#     name = input('name:')
+#     if name == 'q':
+#         break
+#     list_name += name + '\n'
+# names = path.write_text(list_name)
+
+#10.6
+try:
+    print(5/0)
+except ZeroDivisionError:
+    print('You cannot divide by zero.')
