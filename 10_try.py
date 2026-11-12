@@ -15,6 +15,7 @@ file = Path('file_txt/pi_digitals.txt')
 message = file.read_text()
 for line in message.splitlines():
     print(line)
+print(file)
 
 # 10.4
 # name = input('input name:')
@@ -32,7 +33,25 @@ for line in message.splitlines():
 # names = path.write_text(list_name)
 
 #10.6
-try:
-    print(5/0)
-except ZeroDivisionError:
-    print('You cannot divide by zero.')
+# try:
+#     num_1 = int(input('num 1: '))
+#     num_2 = int(input('num 2: '))
+# except ValueError:
+#     print('enter a number')
+# else:
+#     summ = num_1 + num_2
+#     print(summ)
+
+# 10.7
+while True:
+    try:
+        num_1 = input('num 1: ')
+        if num_1 =='q':
+            break
+        num_2 = input('num 2: ')
+        if num_2 == 'q':
+            break
+    except ValueError:
+        print('enter a number')
+    else:
+        print(int(num_1)+ int(num_2))
