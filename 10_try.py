@@ -15,7 +15,6 @@ file = Path('file_txt/pi_digitals.txt')
 message = file.read_text()
 for line in message.splitlines():
     print(line)
-print(file)
 
 # 10.4
 # name = input('input name:')
@@ -43,15 +42,26 @@ print(file)
 #     print(summ)
 
 # 10.7
-while True:
-    try:
-        num_1 = input('num 1: ')
-        if num_1 =='q':
-            break
-        num_2 = input('num 2: ')
-        if num_2 == 'q':
-            break
-    except ValueError:
-        print('enter a number')
-    else:
-        print(int(num_1)+ int(num_2))
+# while True:
+#     try:
+#         num_1 = input('num 1: ')
+#         if num_1 =='q':
+#             break
+#         num_2 = input('num 2: ')
+#         if num_2 == 'q':
+#             break
+#         summ = (int(num_1)+ int(num_2))
+#     except ValueError:
+#         print('enter a number')
+#     else:
+#         print(summ)
+
+# 10.8
+locating_files = ['file_txt/cats.txt', 'file_txt/dogs.txt','file_txt/dog.txt']
+try:
+    for i in locating_files:
+        file = Path(i)
+        content = file.read_text()
+        print(content)
+except FileNotFoundError:
+    print('file not found')
