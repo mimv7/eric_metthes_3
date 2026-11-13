@@ -58,10 +58,26 @@ for line in message.splitlines():
 
 # 10.8
 locating_files = ['file_txt/cats.txt', 'file_txt/dogs.txt','file_txt/dog.txt']
-try:
-    for i in locating_files:
-        file = Path(i)
-        content = file.read_text()
+for i in locating_files:
+    file = Path(i)
+    try:
+        content = file.read_text(encoding='utf-8')
+    except FileNotFoundError:
+        print('File not found')
+    else:
         print(content)
-except FileNotFoundError:
-    print('file not found')
+
+# 10.9
+locating_files = ['file_txt/cats.txt', 'file_txt/dogs.txt','file_txt/dog.txt']
+for i in locating_files:
+    file = Path(i)
+    try:
+        content = file.read_text(encoding='utf-8')
+    except FileNotFoundError:
+        pass
+    else:
+        print(content)
+
+# 10.10
+
+
