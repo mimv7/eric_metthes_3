@@ -79,5 +79,8 @@ for i in locating_files:
         print(content)
 
 # 10.10
-
-
+url_loc_file = 'file_txt/dracula.txt'
+file = Path(url_loc_file)
+content = file.read_text(encoding='utf-8')
+print(content)
+print(content.lower().count('row'))
