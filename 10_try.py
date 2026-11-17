@@ -89,13 +89,28 @@ print(content.lower().count("row"))
 import  json
 from pathlib import Path
 
+from pathlib import Path
+import json
+
+# # 1. Получаем число от пользователя
 # favorite_num = int(input('Enter your favorite number: '))
-# file = Path('file_json/numbers.json') # путь до файла
-# content = json.dumps(favorite_num) # загрузить содержимое в формат
-# number = file.write_text(content) # записать в путь файла
 #
-# you_num = file.read_text() # прочитать из пути содержимое
-# favorite_num = json.loads(you_num) # загрузить из содержимого
+# # 2. Указываем адрес файла (сам файл на диске пока не создан)
+# file = Path('file_json/numbers.json')
+#
+# # 3. Упаковываем число Python в текстовый формат JSON
+# content = json.dumps(favorite_num)
+#
+# # 4. Создаём файл по указанному пути и записываем туда строку JSON
+# file.write_text(content)
+#
+# # 5. Читаем сырой текст из файла обратно в программу
+# you_num = file.read_text()
+#
+# # 6. Распаковываем текст JSON обратно в настоящее число Python
+# favorite_num = json.loads(you_num)
+#
+# # 7. Выводим результат
 # print(favorite_num)
 
 # 10.12
@@ -118,3 +133,30 @@ else:
     number = int(input('Enter your favorite number: '))
     content = json.dumps(number)
     file.write_text(content)
+
+# 10.13
+from pathlib import Path
+import json
+
+users ={}
+name = input('give your name: ')
+surname = input('enter your surname: ')
+login = input('enter your login: ')
+path = Path('file_json/users.json')
+def new_user(name,surname,login):
+    users['name'] = name
+    users['surname'] = surname
+    users['login'] = login
+    for k,v in users.items():
+        user =  f'{k} - "{v}"'
+        return user
+
+
+content = json.dumps(users) # Convert the contents of a variable into a JSON file
+apdated_user = path.write_text(content) # I am writing a JSON file
+print('user data:')
+print(user)
+
+new_user(name,surname, login)
+
+# 10.14
