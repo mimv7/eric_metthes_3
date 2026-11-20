@@ -161,38 +161,35 @@ import json
 def get_stored_username(path):
     """Получает хранимое имя пользователя, если оно существует."""
     if path.exists():
-        contents = path.read_text(encoding='utf-8')
-        try:
-            username = json.loads(contents)
-            return username
-        except json.JSONDecodeError:
-            return None
-    return None
+        contents = path.read_text()
+        username = json.loads(contents)
+        return username
+    else:
+        return None
 
 
 def get_new_username(path):
-    """Запрашивает новое имя пользователя и сохраняет его в файл."""
-    username = input("Как вас зовут? ")
-    contents = json.dumps(username, ensure_ascii=False)
-    path.write_text(contents, encoding='utf-8')
+    """Запрашивает новое имя пользователя."""
+    username = input("What is your name? ")
+    contents = json.dumps(username)
+    path.write_text(contents)
     return username
 
 
 def greet_user():
-    """Приветствует пользователя, предварительно проверив его имя."""
-    path = Path('file_json/username.json')
+    """Приветствует пользователя по имени."""
+    path = Path('file_json/users.json')
     username = get_stored_username(path)
-
     if username:
-        # Уточняем у пользователя, верное ли имя сохранено
-        correct = input(f"Вы {username}? (y/n): ").strip().lower()
-        if correct == 'y':
-            print(f"С возвращением, {username}!")
-            return  # Завершаем функцию, чтобы не сработал код ниже
+        last_user = input(f"Are you {username}?:y/n")
+        if last_user == 'y':
+            print(f"Welcome back, {username}!")
+        else:
+            get_new_username(path)
 
-    # Сработает, если файла не было, он пустой или пользователь ответил 'n'
-    username = get_new_username(path)
-    print(f"Мы запомнили вас, {username}!")
+    else:
+        username = get_new_username(path)
+        print(f"We'll remember you when you come back, {username}!")
 
 
 greet_user()
